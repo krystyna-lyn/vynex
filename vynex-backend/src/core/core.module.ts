@@ -7,6 +7,7 @@ import { IS_DEV_ENV } from '../shared/utils/is-dev.util.js';
 import { getGraphqlConfig } from './graphql.config.js';
 import { ConfigService } from '@nestjs/config';
 import { RedisModule } from './redis/redis.module.js';
+import { AccountModule } from '../modules/auth/account/account.module.js';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { RedisModule } from './redis/redis.module.js';
     }),
     PrismaModule,
     RedisModule,
+    AccountModule
   ],
 
 })
