@@ -12,6 +12,8 @@ import { AccountModule } from '../modules/auth/account/account.module.js';
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: '../.env',
+
       ignoreEnvFile: !IS_DEV_ENV,
       isGlobal: true,
     }),
