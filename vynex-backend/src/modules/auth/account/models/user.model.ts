@@ -5,32 +5,32 @@ import { ObjectType, ID, Field } from '@nestjs/graphql';
 export class UserModel {
 
     @Field(() => ID)
-    id: string;
+    public id: string;
 
     @Field(() => String)
-    name: string;
+    public name: string;
 
     @Field(() => String)
-    email: string;
+    public email: string;
 
     @Field(() => String)
-    password: string;
+    public password: string;
 
     @Field(() => String)
-    username: string;
+    public username: string;
 
     @Field(() => String)
-    displayName: string;
+    public displayName: string;
 
     @Field(() => String, { nullable: true })
     avatar: string;
 
     @Field(() => String, { nullable: true })
-    bio: string;
+    public bio: string;
 
     @Field(() => Date)
-    createdAt: Date;
+    public createdAt: Date;
 
     @Field(() => Date)
-    updatedAt: Date;
+    public updatedAt: Date;
 }
