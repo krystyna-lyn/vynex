@@ -6,7 +6,7 @@ export class CreateUserInput {
     @IsString()
     @IsNotEmpty()
     @Matches(/^[a-zA-Z0-9_]+(?:-[a-zA-Z0-9]+)*$/)
-    public name: string;
+    public username: string;
 
     @Field()
     @IsString()
