@@ -8,13 +8,7 @@ export class UserModel {
     public id: string;
 
     @Field(() => String)
-    public name: string;
-
-    @Field(() => String)
     public email: string;
-
-    @Field(() => String)
-    public password: string;
 
     @Field(() => String)
     public username: string;
