@@ -17,32 +17,39 @@ export class AccountService {
         const { username, email, password } = input
 
         const isUsernameExists = await this.prismaService.user.findUnique({
-            where: {
-                username
-            }
+            where: { username }
         })
+
         if (isUsernameExists) {
             throw new ConflictException('This username is already exist')
         }
 
         const isEmailExist = await this.prismaService.user.findUnique({
-            where: {
-                email
-            }
+            where: { email }
         })
+
         if (isEmailExist) {
             throw new ConflictException('This email is already exist')
         }
 
-        const user = await this.prismaService.user.create({
+        return this.prismaService.user.create({
             data: {
                 username,
                 email,
                 password: await hash(password),
                 displayName: username
+            },
+            select: {
+                id: true,
+                username: true,
+                email: true,
+                displayName: true,
+                avatar: true,
+                bio: true,
+                createdAt: true,
+                updatedAt: true
             }
         })
-        return user
     }
 
 }
