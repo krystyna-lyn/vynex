@@ -28,8 +28,6 @@ type UserModel {
   displayName: String!
   email: String!
   id: ID!
-  name: String!
-  password: String!
   updatedAt: DateTime!
   username: String!
 }
