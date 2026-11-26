@@ -8,6 +8,7 @@ import { getGraphqlConfig } from './graphql.config.js';
 import { ConfigService } from '@nestjs/config';
 import { RedisModule } from './redis/redis.module.js';
 import { AccountModule } from '../modules/auth/account/account.module.js';
+import { SessionModule } from '../modules/auth/session/session.module.js';
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { AccountModule } from '../modules/auth/account/account.module.js';
     }),
     PrismaModule,
     RedisModule,
-    AccountModule
+    AccountModule,
+    SessionModule
   ],
 
 })
